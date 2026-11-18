@@ -1,14 +1,43 @@
 {
-  "_how_to_edit": "Change only the words between quotes on the right-hand side. Keep every quote mark and comma. Then press Commit changes. If something goes wrong, the site shows the last safe version until this file is fixed.",
+  "_how_to_edit": "Change only the words between quotes on the right-hand side. Keep every quote mark, comma and bracket. Then press Commit changes. If something goes wrong, the site shows the last safe version until this file is fixed.",
   "brand": "Rewards World™",
   "app": "https://app.rewardsworld.in",
   "email": "totalrewardsworld@gmail.com",
+  "meta": {
+    "title": "Rewards World™ | Total rewards and pay governance",
+    "description": "Rewards World™ helps HR, finance and boards in India design, run and explain pay. Eight connected services, from a free first look to board-ready packs."
+  },
+  "ui": {
+    "skip": "Skip to main content",
+    "menu": "Menu",
+    "close": "Close",
+    "home": "Home"
+  },
+  "nav": {
+    "services": "Services",
+    "how": "How it works",
+    "learning": "Learning",
+    "trust": "Trust",
+    "contact": "Talk to us",
+    "signin": "Sign in"
+  },
   "hero": {
     "eyebrow": "Total rewards, done properly",
     "title": "Pay that people trust, and a board can defend",
     "lead": "Rewards World™ helps HR, finance and boards in India design, run and explain pay. One connected journey takes you from a free first look to board-ready packs, with every deliverable reviewed by a second person before it goes out.",
     "primary": "Start your free assessment",
-    "secondary": "Sign in"
+    "secondary": "Sign in",
+    "panelTitle": "The eight services"
+  },
+  "trust": {
+    "title": "Held in India, ready to show",
+    "lead": "Your data stays in India. The work is set up so you can show what was decided, by whom, and from which source.",
+    "items": [
+      ["Data in India", "The tool and your data are hosted in India."],
+      ["A named second pair of eyes", "Every review is approved by a different named person, and every decision is recorded."],
+      ["Sources on the page", "Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft."],
+      ["Change it yourselves", "Words, rules and access can be updated by your own team, without waiting for a developer."]
+    ]
   },
   "problems": {
     "title": "The everyday problems we help with",
@@ -28,14 +57,16 @@
     "free": "Free",
     "more": "What it covers",
     "ask": "Talk to us",
+    "then": "Then",
+    "startLabel": "A good place to start",
     "services": [
-      {"slug": "diagnostic", "name": "Diagnostic", "free": true, "what": "A free first look at how well pay is run, with your Governance Quotient™ score and the three things to fix first."},
-      {"slug": "health-check", "name": "Health Check", "what": "Where pay stands today: cost, fairness, position against ranges and the gaps, using your own data."},
-      {"slug": "salary-band-build", "name": "Salary Band Build", "what": "Fair, affordable salary bands for every grade, with the cost of moving people into them."},
-      {"slug": "full-architecture-pack", "name": "Full Architecture Pack", "what": "The whole pay system designed together: grades, pay rises, bonus and approvals, with a board pack."},
-      {"slug": "esop-lti", "name": "ESOP and LTI", "what": "Share awards that reward long-term success, with their cost now, later and in a bad year."},
-      {"slug": "nrc-paper-review", "name": "NRC Paper Review", "what": "A clear paper on executive pay that the Nomination and Remuneration Committee can decide on."},
-      {"slug": "governance-retainer", "name": "Governance Retainer", "what": "A monthly look at pay decisions, so problems are caught early and oversight is on record."},
+      {"slug": "diagnostic", "name": "Diagnostic", "free": true, "what": "A free first look at how well pay is run, with your Governance Quotient™ score and the three things to fix first.", "then": "Health Check"},
+      {"slug": "health-check", "name": "Health Check", "what": "Where pay stands today: cost, fairness, position against ranges and the gaps, using your own data.", "then": "Salary Band Build"},
+      {"slug": "salary-band-build", "name": "Salary Band Build", "what": "Fair, affordable salary bands for every grade, with the cost of moving people into them.", "then": "Full Architecture Pack"},
+      {"slug": "full-architecture-pack", "name": "Full Architecture Pack", "what": "The whole pay system designed together: grades, pay rises, bonus and approvals, with a board pack.", "then": "ESOP and LTI"},
+      {"slug": "esop-lti", "name": "ESOP and LTI", "what": "Share awards that reward long-term success, with their cost now, later and in a bad year.", "then": "NRC Paper Review"},
+      {"slug": "nrc-paper-review", "name": "NRC Paper Review", "what": "A clear paper on executive pay that the Nomination and Remuneration Committee can decide on.", "then": "Governance Retainer"},
+      {"slug": "governance-retainer", "name": "Governance Retainer", "what": "A monthly look at pay decisions, so problems are caught early and oversight is on record.", "then": "Extra Work"},
       {"slug": "extra-work", "name": "Extra Work", "what": "Anything outside the written scope, agreed with you in writing before it starts."}
     ]
   },
@@ -46,6 +77,16 @@
       ["Share your data once", "Simple Excel templates explain every column. We check the files before any number is used."],
       ["See the work as it happens", "Each service follows the same five steps: get data, check, build, review, deliver."],
       ["Get board-ready packs", "Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it."]
+    ]
+  },
+  "learning": {
+    "title": "Learn the work as you do it",
+    "lead": "Plain explanations sit on every screen, so someone new to pay and a board director can both follow the same work. A short check of understanding is completed before a pack goes to the board.",
+    "levels": [
+      ["New to pay", "A school student or fresher can follow the steps, with every term explained in everyday words."],
+      ["Doing the work", "Associates, managers and specialists build the files, with the reason for each choice written next to it."],
+      ["Leading the function", "A CHRO, CFO, CXO or KMP can review the same numbers and the questions a committee is likely to ask."],
+      ["The board", "Packs are written so a director can follow the sources, assumptions and risks without a separate briefing."]
     ]
   },
   "contact": {
