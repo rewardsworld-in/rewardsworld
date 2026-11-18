@@ -1,0 +1,68 @@
+{
+  "_how_to_edit": "Change only the words between quotes on the right-hand side. Keep every quote mark and comma. Then press Commit changes. If something goes wrong, the site shows the last safe version until this file is fixed.",
+  "brand": "Rewards World™",
+  "app": "https://app.rewardsworld.in",
+  "email": "totalrewardsworld@gmail.com",
+  "hero": {
+    "eyebrow": "Total rewards, done properly",
+    "title": "Pay that people trust, and a board can defend",
+    "lead": "Rewards World™ helps HR, finance and boards in India design, run and explain pay. One connected journey takes you from a free first look to board-ready packs, with every deliverable reviewed by a second person before it goes out.",
+    "primary": "Start your free assessment",
+    "secondary": "Sign in"
+  },
+  "problems": {
+    "title": "The everyday problems we help with",
+    "items": [
+      ["Spreadsheets everywhere", "Pay data lives in many files and versions. We load it once, check it, and use it for every piece of work."],
+      ["Typing the same data again", "Each service hands its data and results to the next, so nothing is keyed in twice."],
+      ["Unclear approvals", "Every review is approved by a different named person, and every decision is recorded."],
+      ["Board packs that take weeks", "Packs are built from the checked data, with sources, assumptions and risks on one page."],
+      ["Keeping up with the rules", "Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft."],
+      ["Juniors who cannot explain the numbers", "Plain explanations on every screen, and a short check of understanding before a pack goes to the board."]
+    ]
+  },
+  "journey": {
+    "title": "Eight services, one connected journey",
+    "lead": "Start anywhere that suits you. Each service builds on the last, so your data is loaded once and every result carries forward.",
+    "price": "Contact for pricing",
+    "free": "Free",
+    "more": "What it covers",
+    "ask": "Talk to us",
+    "services": [
+      {"slug": "diagnostic", "name": "Diagnostic", "free": true, "what": "A free first look at how well pay is run, with your Governance Quotient™ score and the three things to fix first."},
+      {"slug": "health-check", "name": "Health Check", "what": "Where pay stands today: cost, fairness, position against ranges and the gaps, using your own data."},
+      {"slug": "salary-band-build", "name": "Salary Band Build", "what": "Fair, affordable salary bands for every grade, with the cost of moving people into them."},
+      {"slug": "full-architecture-pack", "name": "Full Architecture Pack", "what": "The whole pay system designed together: grades, pay rises, bonus and approvals, with a board pack."},
+      {"slug": "esop-lti", "name": "ESOP and LTI", "what": "Share awards that reward long-term success, with their cost now, later and in a bad year."},
+      {"slug": "nrc-paper-review", "name": "NRC Paper Review", "what": "A clear paper on executive pay that the Nomination and Remuneration Committee can decide on."},
+      {"slug": "governance-retainer", "name": "Governance Retainer", "what": "A monthly look at pay decisions, so problems are caught early and oversight is on record."},
+      {"slug": "extra-work", "name": "Extra Work", "what": "Anything outside the written scope, agreed with you in writing before it starts."}
+    ]
+  },
+  "how": {
+    "title": "How working with us feels",
+    "steps": [
+      ["Start free", "Create a free account and answer the governance questions. You keep your score."],
+      ["Share your data once", "Simple Excel templates explain every column. We check the files before any number is used."],
+      ["See the work as it happens", "Each service follows the same five steps: get data, check, build, review, deliver."],
+      ["Get board-ready packs", "Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it."]
+    ]
+  },
+  "contact": {
+    "title": "Talk to us",
+    "lead": "Tell us a little about your organisation and what you need. A Rewards World partner will reply by email.",
+    "button": "Email us",
+    "subject": "Rewards World: I would like to talk",
+    "body": "Hello Rewards World,\n\nOrganisation:\nMy role:\nApproximate number of employees:\nWhat we need help with:\nAny committee or board date we are working to:\n\nThank you."
+  },
+  "legal": {
+    "note": "Our legal pages are drafts until our legal adviser has approved them.",
+    "links": [
+      ["Terms of Use", "/terms"],
+      ["Privacy Notice", "/privacy"],
+      ["Data Processing Agreement", "/dpa"],
+      ["Subscription Terms", "/subscription-terms"]
+    ]
+  },
+  "footer": "The Rewards Governance Model™ and the Governance Quotient™ are proprietary frameworks of Rewards World™. Nothing on this site is legal, tax or valuation advice."
+}

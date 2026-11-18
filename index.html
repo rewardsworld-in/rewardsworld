@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rewards World</title>
-  <meta name="description" content="Launching soon. Specialized advisory, frameworks, and insights for enterprise.">
-  <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f4ee;
-      color: #1c1915;
-    }
-    main { width: min(720px, calc(100% - 40px)); padding: 64px 0; }
-    .mark { letter-spacing: 0.18em; font-size: 12px; font-family: Arial, sans-serif; }
-    h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; font-weight: 500; margin: 18px 0; }
-    p { font-size: 18px; line-height: 1.6; max-width: 38em; }
-    a.button {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 12px 18px;
-      background: #1c1915;
-      color: #fff;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-    }
-    .tags, footer { font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 0.08em; color: #5c564e; }
-    footer { margin-top: 48px; }
-    footer a { color: inherit; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rewards World™ | Total rewards and pay governance</title>
+<meta name="description" content="Rewards World™ helps HR, finance and boards in India design, run and explain pay. Eight connected services, from a free first look to board-ready packs.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1530;--navy2:#13224a;--gold:#e5a50a;--gold2:#f3c24f;--ink:#1d2333;--muted:#5b6478;--line:#e4e7ee;--bg:#f7f6f2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:17px;line-height:1.6}
+a{color:inherit}h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,4vw,48px);background:rgba(247,246,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--navy)}.logo img{border-radius:9px}
+.top nav{display:flex;align-items:center;gap:18px;font-size:15px}.top nav a{text-decoration:none}.top nav a:not(.pill){color:var(--muted)}
+.pill{display:inline-block;border-radius:999px;padding:12px 22px;font-weight:600;text-decoration:none;font-size:16px;text-align:center}
+.pill.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--navy);box-shadow:0 6px 18px rgba(229,165,10,.35)}
+.pill.light{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.pill.ghost{border:1px solid var(--navy);color:var(--navy);padding:8px 16px;font-size:15px}
+.hero{margin:20px clamp(12px,3vw,40px) 0;border-radius:28px;background:radial-gradient(1200px 400px at 90% -10%,#26407a 0,transparent 60%),var(--navy);color:#fff;padding:clamp(40px,8vw,96px) clamp(22px,6vw,80px)}
+.hero h1{color:#fff;font-size:clamp(34px,6vw,60px);line-height:1.08;margin:.2em 0;max-width:15em}
+.eyebrow{color:var(--gold2);font-weight:600;letter-spacing:.06em;margin:0}
+.lead{font-size:clamp(17px,2.2vw,20px);color:#d6dcea;max-width:40em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(40px,7vw,80px) clamp(18px,4vw,32px) 0}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px}.sub{color:var(--muted);max-width:44em;margin:0 0 24px}
+ul,ol{list-style:none;margin:0;padding:0}
+.grid3{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.probs li,.svc,.how li{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 1px 2px rgba(11,21,48,.04),0 8px 24px rgba(11,21,48,.05)}
+.probs h3,.svc h3,.how h3{margin:0 0 6px;font-size:18px;color:var(--navy)}.probs p,.svc p,.how p{margin:0;color:var(--muted)}
+.journey{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));counter-reset:s}
+.svc{display:flex;flex-direction:column;gap:8px}.svc-top{display:flex;justify-content:space-between;align-items:center}
+.num{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:#eef1f7;color:var(--navy);font-weight:700;flex-shrink:0}
+.tag{font-size:13px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f2f4f8;color:var(--muted)}.tag.free{background:#e7f6ec;color:#17643a}
+.svc-links{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;gap:14px;font-size:15px}.svc-links a{color:var(--navy2)}.svc-links a.strong{font-weight:700}
+.how{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.how li{display:flex;gap:14px}
+.contact{text-align:center}.contact .sub{margin:0 auto 24px}.mail{color:var(--muted);margin-top:12px}
+footer{margin-top:80px;background:var(--navy);color:#aeb7cc;font-size:14px}footer .wrap{padding-bottom:40px}
+.legal{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:12px}.legal a{color:#fff}.legal small{color:#aeb7cc}
+@media(max-width:560px){.top nav a:not(.pill){display:none}.cta .pill{flex:1 1 100%}}
+</style>
 </head>
 <body>
-  <main>
-    <div class="mark">REWARDS WORLD™ · LAUNCHING SOON</div>
-    <p>Launching soon. Specialized advisory, frameworks, and insights for enterprise.</p>
-    <a class="button" href="https://rewardsworld.substack.com/">READ ON SUBSTACK</a>
-    <p class="tags">TOTAL REWARDS · EXECUTIVE COMPENSATION · PAY GOVERNANCE</p>
-    <footer>
-      © 2026 Rewards World. All rights reserved.<br>
-      <a href="mailto:totalrewardsworld@gmail.com">totalrewardsworld@gmail.com</a>
-    </footer>
-  </main>
+<div id="app"><header class="top"><a class="logo" href="#top" aria-label="Rewards World™ home"><img src="logo.png" alt="" width="36" height="36"><span>REWARDS WORLD™</span></a><nav><a href="#services">Services</a><a href="#contact">Contact</a><a class="pill ghost" href="https://app.rewardsworld.in/login">Sign in</a></nav></header><main id="top"><section class="hero"><p class="eyebrow">Total rewards, done properly</p><h1>Pay that people trust, and a board can defend</h1><p class="lead">Rewards World™ helps HR, finance and boards in India design, run and explain pay. One connected journey takes you from a free first look to board-ready packs, with every deliverable reviewed by a second person before it goes out.</p><div class="cta"><a class="pill gold" data-cta="signup" href="https://app.rewardsworld.in/signup">Start your free assessment</a><a class="pill light" data-cta="login" href="https://app.rewardsworld.in/login">Sign in</a></div></section><section class="wrap"><h2>The everyday problems we help with</h2><ul class="grid3 probs"><li><h3>Spreadsheets everywhere</h3><p>Pay data lives in many files and versions. We load it once, check it, and use it for every piece of work.</p></li><li><h3>Typing the same data again</h3><p>Each service hands its data and results to the next, so nothing is keyed in twice.</p></li><li><h3>Unclear approvals</h3><p>Every review is approved by a different named person, and every decision is recorded.</p></li><li><h3>Board packs that take weeks</h3><p>Packs are built from the checked data, with sources, assumptions and risks on one page.</p></li><li><h3>Keeping up with the rules</h3><p>Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft.</p></li><li><h3>Juniors who cannot explain the numbers</h3><p>Plain explanations on every screen, and a short check of understanding before a pack goes to the board.</p></li></ul></section><section class="wrap" id="services"><h2>Eight services, one connected journey</h2><p class="sub">Start anywhere that suits you. Each service builds on the last, so your data is loaded once and every result carries forward.</p><ol class="journey"><li class="svc"><div class="svc-top"><span class="num">1</span><span class="tag free">Free</span></div><h3>Diagnostic</h3><p>A free first look at how well pay is run, with your Governance Quotient™ score and the three things to fix first.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/diagnostic">What it covers</a><a class="strong" href="https://app.rewardsworld.in/signup">Start your free assessment</a></div></li><li class="svc"><div class="svc-top"><span class="num">2</span><span class="tag ">Contact for pricing</span></div><h3>Health Check</h3><p>Where pay stands today: cost, fairness, position against ranges and the gaps, using your own data.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/health-check">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20Health%20Check&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">3</span><span class="tag ">Contact for pricing</span></div><h3>Salary Band Build</h3><p>Fair, affordable salary bands for every grade, with the cost of moving people into them.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/salary-band-build">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20Salary%20Band%20Build&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">4</span><span class="tag ">Contact for pricing</span></div><h3>Full Architecture Pack</h3><p>The whole pay system designed together: grades, pay rises, bonus and approvals, with a board pack.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/full-architecture-pack">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20Full%20Architecture%20Pack&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">5</span><span class="tag ">Contact for pricing</span></div><h3>ESOP and LTI</h3><p>Share awards that reward long-term success, with their cost now, later and in a bad year.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/esop-lti">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20ESOP%20and%20LTI&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">6</span><span class="tag ">Contact for pricing</span></div><h3>NRC Paper Review</h3><p>A clear paper on executive pay that the Nomination and Remuneration Committee can decide on.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/nrc-paper-review">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20NRC%20Paper%20Review&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">7</span><span class="tag ">Contact for pricing</span></div><h3>Governance Retainer</h3><p>A monthly look at pay decisions, so problems are caught early and oversight is on record.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/governance-retainer">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20Governance%20Retainer&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li><li class="svc"><div class="svc-top"><span class="num">8</span><span class="tag ">Contact for pricing</span></div><h3>Extra Work</h3><p>Anything outside the written scope, agreed with you in writing before it starts.</p><div class="svc-links"><a href="https://app.rewardsworld.in/services/extra-work">What it covers</a><a class="strong" href="mailto:totalrewardsworld@gmail.com?subject=Contact%20for%20pricing%3A%20Extra%20Work&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Talk to us</a></div></li></ol></section><section class="wrap"><h2>How working with us feels</h2><ol class="how"><li><span class="num">1</span><div><h3>Start free</h3><p>Create a free account and answer the governance questions. You keep your score.</p></div></li><li><span class="num">2</span><div><h3>Share your data once</h3><p>Simple Excel templates explain every column. We check the files before any number is used.</p></div></li><li><span class="num">3</span><div><h3>See the work as it happens</h3><p>Each service follows the same five steps: get data, check, build, review, deliver.</p></div></li><li><span class="num">4</span><div><h3>Get board-ready packs</h3><p>Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it.</p></div></li></ol></section><section class="wrap contact" id="contact"><h2>Talk to us</h2><p class="sub">Tell us a little about your organisation and what you need. A Rewards World partner will reply by email.</p><a class="pill gold" data-cta="email" href="mailto:totalrewardsworld@gmail.com?subject=Rewards%20World%3A%20I%20would%20like%20to%20talk&amp;body=Hello%20Rewards%20World%2C%0A%0AOrganisation%3A%0AMy%20role%3A%0AApproximate%20number%20of%20employees%3A%0AWhat%20we%20need%20help%20with%3A%0AAny%20committee%20or%20board%20date%20we%20are%20working%20to%3A%0A%0AThank%20you.">Email us</a><p class="mail">totalrewardsworld@gmail.com</p></section></main><footer><div class="wrap"><nav class="legal"><a href="https://app.rewardsworld.in/terms">Terms of Use <small>(draft)</small></a><a href="https://app.rewardsworld.in/privacy">Privacy Notice <small>(draft)</small></a><a href="https://app.rewardsworld.in/dpa">Data Processing Agreement <small>(draft)</small></a><a href="https://app.rewardsworld.in/subscription-terms">Subscription Terms <small>(draft)</small></a></nav><p>Our legal pages are drafts until our legal adviser has approved them.</p><p>The Rewards Governance Model™ and the Governance Quotient™ are proprietary frameworks of Rewards World™. Nothing on this site is legal, tax or valuation advice.</p><p>© 2026 Rewards World™. All rights reserved.</p></div></footer></div>
+<noscript><p style="padding:16px">Email us: totalrewardsworld@gmail.com</p></noscript>
+<script src="site.js"></script>
 </body>
 </html>
