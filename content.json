@@ -2,97 +2,200 @@
   "_how_to_edit": "Change only the words between quotes on the right-hand side. Keep every quote mark, comma and bracket. Then press Commit changes. If something goes wrong, the site shows the last safe version until this file is fixed.",
   "brand": "Rewards World™",
   "app": "https://app.rewardsworld.in",
+  "signinUrl": "https://app.rewardsworld.in/app",
   "email": "totalrewardsworld@gmail.com",
+  "substack": "https://rewardsworld.substack.com",
   "meta": {
-    "title": "Rewards World™ | Total rewards and pay governance",
-    "description": "Rewards World™ helps HR, finance and boards in India design, run and explain pay. Eight connected services, from a free first look to board-ready packs."
+    "title": "Rewards World™ | Pay you can cost, explain and defend",
+    "description": "Rewards World™ is a focused total rewards firm for Indian boards, CHROs, CFOs and founders, with a working tool behind every piece of work. Design it. Cost it. Govern it."
   },
   "ui": {
     "skip": "Skip to main content",
     "menu": "Menu",
     "close": "Close",
-    "home": "Home"
+    "home": "Rewards World home",
+    "sample": "Sample data",
+    "sampleNote": "Made-up figures for a made-up organisation. Not a client, not a real result.",
+    "startWith": "Start with",
+    "feeds": "Feeds the next step",
+    "details": "Details in the tool",
+    "readMore": "Read on Substack",
+    "draft": "draft"
   },
   "nav": {
     "services": "Services",
-    "how": "How it works",
-    "learning": "Learning",
+    "who": "Who it is for",
+    "samples": "Samples",
+    "tool": "The tool",
     "trust": "Trust",
+    "insights": "Insights",
     "contact": "Talk to us",
     "signin": "Sign in"
   },
   "hero": {
-    "eyebrow": "Total rewards, done properly",
-    "title": "Pay that people trust, and a board can defend",
-    "lead": "Rewards World™ helps HR, finance and boards in India design, run and explain pay. One connected journey takes you from a free first look to board-ready packs, with every deliverable reviewed by a second person before it goes out.",
-    "primary": "Start your free assessment",
-    "secondary": "Sign in",
-    "panelTitle": "The eight services"
-  },
-  "trust": {
-    "title": "Held in India, ready to show",
-    "lead": "Your data stays in India. The work is set up so you can show what was decided, by whom, and from which source.",
-    "items": [
-      ["Data in India", "The tool and your data are hosted in India."],
-      ["A named second pair of eyes", "Every review is approved by a different named person, and every decision is recorded."],
-      ["Sources on the page", "Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft."],
-      ["Change it yourselves", "Words, rules and access can be updated by your own team, without waiting for a developer."]
-    ]
-  },
-  "problems": {
-    "title": "The everyday problems we help with",
-    "items": [
-      ["Spreadsheets everywhere", "Pay data lives in many files and versions. We load it once, check it, and use it for every piece of work."],
-      ["Typing the same data again", "Each service hands its data and results to the next, so nothing is keyed in twice."],
-      ["Unclear approvals", "Every review is approved by a different named person, and every decision is recorded."],
-      ["Board packs that take weeks", "Packs are built from the checked data, with sources, assumptions and risks on one page."],
-      ["Keeping up with the rules", "Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft."],
-      ["Juniors who cannot explain the numbers", "Plain explanations on every screen, and a short check of understanding before a pack goes to the board."]
-    ]
+    "eyebrow": "Total rewards and pay governance, India",
+    "title": "Pay you can cost, explain and defend.",
+    "lead": "A plan can look fine in the deck. Then it shows up in the accounts as a number nobody worked out. We design the pay plan, cost it, and defend it with the people who build it and the people who have to sign it. A working tool sits behind every piece of work.",
+    "primary": "Talk to us",
+    "secondary": "See how it works",
+    "panelTitle": "Four questions, in the same room",
+    "questions": [
+      "What it costs this year.",
+      "What behaviour it is meant to buy.",
+      "What it still pays after the meeting.",
+      "What breaks in a bad year."
+    ],
+    "panelNote": "If those four cannot be said together, the plan is not finished.",
+    "tests": ["Structured", "Costed", "Defensible", "Governed"],
+    "tagline": "Design it. Cost it. Govern it."
   },
   "journey": {
-    "title": "Eight services, one connected journey",
-    "lead": "Start anywhere that suits you. Each service builds on the last, so your data is loaded once and every result carries forward.",
-    "price": "Contact for pricing",
+    "eyebrow": "How it fits together",
+    "title": "Eight services, one journey",
+    "lead": "Each service builds on the one before it. Your data is loaded once, checked once, and every result carries forward. Start where you are.",
     "free": "Free",
-    "more": "What it covers",
+    "pricing": "Contact for pricing. Every engagement is scoped in writing before any work starts.",
     "ask": "Talk to us",
     "then": "Then",
-    "startLabel": "A good place to start",
+    "startLabel": "A good place to begin",
     "services": [
-      {"slug": "diagnostic", "name": "Diagnostic", "free": true, "what": "A free first look at how well pay is run, with your Governance Quotient™ score and the three things to fix first.", "then": "Health Check"},
-      {"slug": "health-check", "name": "Health Check", "what": "Where pay stands today: cost, fairness, position against ranges and the gaps, using your own data.", "then": "Salary Band Build"},
-      {"slug": "salary-band-build", "name": "Salary Band Build", "what": "Fair, affordable salary bands for every grade, with the cost of moving people into them.", "then": "Full Architecture Pack"},
-      {"slug": "full-architecture-pack", "name": "Full Architecture Pack", "what": "The whole pay system designed together: grades, pay rises, bonus and approvals, with a board pack.", "then": "ESOP and LTI"},
-      {"slug": "esop-lti", "name": "ESOP and LTI", "what": "Share awards that reward long-term success, with their cost now, later and in a bad year.", "then": "NRC Paper Review"},
-      {"slug": "nrc-paper-review", "name": "NRC Paper Review", "what": "A clear paper on executive pay that the Nomination and Remuneration Committee can decide on.", "then": "Governance Retainer"},
-      {"slug": "governance-retainer", "name": "Governance Retainer", "what": "A monthly look at pay decisions, so problems are caught early and oversight is on record.", "then": "Extra Work"},
-      {"slug": "extra-work", "name": "Extra Work", "what": "Anything outside the written scope, agreed with you in writing before it starts."}
+      {"slug": "diagnostic", "name": "Diagnostic", "free": true, "line": "A free look at how well pay is run, with your Governance Quotient™ score.", "feeds": "Your score and the three fixes to start with go into the Health Check."},
+      {"slug": "health-check", "name": "Health Check", "line": "How pay really works today: merit, promotion, wage cost and the structure behind offer letters.", "feeds": "The gaps it finds become the brief for your salary bands."},
+      {"slug": "salary-band-build", "name": "Salary Band Build", "line": "Clean levels, Fixed CTC bands, placement rules and a one-page cost view.", "feeds": "Approved bands and their cost become the base of the full plan."},
+      {"slug": "full-architecture-pack", "name": "Full Architecture Pack", "line": "The whole plan together: structured, costed, defensible and governed.", "feeds": "Grades, bonus rules and costs carry straight into the equity design."},
+      {"slug": "esop-lti", "name": "ESOP and LTI", "line": "Pool, vesting and leaver terms, with the cost over the vesting period and a bad-year view.", "feeds": "The equity cost and its bad-year view go into the committee paper."},
+      {"slug": "nrc-paper-review", "name": "NRC Paper Review", "line": "A short-turnaround review of a pay paper before it goes to committee.", "feeds": "What the committee decides becomes the record the retainer keeps clean."},
+      {"slug": "governance-retainer", "name": "Governance Retainer", "line": "A monthly look at pay decisions, so oversight stays on record.", "feeds": "Anything new that needs real work is agreed as extra work."},
+      {"slug": "extra-work", "name": "Extra Work", "line": "Work outside the written scope, agreed with you in writing before it starts.", "feeds": ""}
     ]
   },
-  "how": {
-    "title": "How working with us feels",
-    "steps": [
-      ["Start free", "Create a free account and answer the governance questions. You keep your score."],
-      ["Share your data once", "Simple Excel templates explain every column. We check the files before any number is used."],
-      ["See the work as it happens", "Each service follows the same five steps: get data, check, build, review, deliver."],
-      ["Get board-ready packs", "Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it."]
-    ]
+  "who": {
+    "eyebrow": "Who it is for",
+    "title": "Two kinds of reader. The person who has to build the number. The person who has to sign it.",
+    "lead": "Here is how each seat usually puts it, and what we put in front of them.",
+    "people": [
+      {"role": "Founder", "says": "I want to pay people fairly and hire well, without my pay bill running ahead of me. I do not have an HR team to build this.", "gives": "Clean levels and Fixed CTC bands, with the cost of every move on one page.", "start": "diagnostic"},
+      {"role": "CHRO", "says": "I have to explain every pay decision to employees, to the CEO and to the committee. I cannot do that from ten spreadsheets.", "gives": "One place for the data, plain explanations on every screen, and approvals on record.", "start": "health-check"},
+      {"role": "CFO", "says": "Tell me what it costs this year, what it costs later and what happens in a bad year, in numbers that tie to the accounts.", "gives": "The cash, the profit and loss and the accounting charge on one page.", "start": "full-architecture-pack"},
+      {"role": "Board and NRC", "says": "I have to sign this. I want to see what was rejected, not only what is recommended, and who approved it.", "gives": "A short paper the committee can decide on, with sources, assumptions and risks.", "start": "nrc-paper-review"}
+    ],
+    "entitiesTitle": "For every kind of organisation",
+    "entities": ["Start-up", "Growing private company", "Listed company", "LLP", "Bank", "Insurer"],
+    "entitiesNote": "The tool asks for your legal form and your regulator, then shows only the checks that apply to you. Anything not yet checked by a legal adviser is marked draft."
   },
-  "learning": {
-    "title": "Learn the work as you do it",
-    "lead": "Plain explanations sit on every screen, so someone new to pay and a board director can both follow the same work. A short check of understanding is completed before a pack goes to the board.",
+  "samples": {
+    "eyebrow": "What you get",
+    "title": "Three pages from the work",
+    "lead": "Every figure here is made up, to show the shape of the page. Your own pages carry your data, its source and the name of who approved it.",
+    "board": {
+      "kicker": "Board pack page",
+      "title": "Board summary",
+      "sub": "Sample Co, FY 2026-27",
+      "rows": [
+        ["What does it cost this year?", "₹4.8 crore", "Fixed pay, bonus and equity charge, tied to the budget."],
+        ["What does it achieve?", "Keeps critical roles", "Pay linked to the goals the plan names."],
+        ["What does it cost later?", "₹6.1 crore in year 3", "If every assumption on page 2 holds."],
+        ["What happens in a bad year?", "₹2.9 crore", "Bonus pool falls, clawback rule stays."]
+      ],
+      "foot": "Approved by: A. Name (HR), B. Name (Finance). Version 3, sources attached."
+    },
+    "grid": {
+      "kicker": "Pay band grid",
+      "title": "Fixed CTC bands",
+      "sub": "Sample Co, ₹ lakh a year",
+      "head": ["Grade", "Minimum", "Midpoint", "Maximum", "Spread"],
+      "rows": [
+        ["G1", "4.0", "5.0", "6.0", "50%"],
+        ["G2", "6.0", "7.5", "9.0", "50%"],
+        ["G3", "9.0", "11.5", "14.0", "56%"],
+        ["G4", "14.0", "18.0", "22.0", "57%"],
+        ["G5", "22.0", "29.0", "36.0", "64%"]
+      ],
+      "foot": "Where each person lands, and the cost of moving them in, sit on the next page."
+    },
+    "check": {
+      "kicker": "Compliance check",
+      "title": "India checks",
+      "sub": "Sample Co, listed company",
+      "rows": [
+        ["Section 197 and Schedule V", "Review", "Remuneration against the limits."],
+        ["NRC composition and remit", "Applies", "Points to confirm with the board."],
+        ["ESOP register", "Applies", "Pool, grants, vesting and lapses."],
+        ["Rule 5 and BRSR", "Review", "Pay ratio and disclosures."],
+        ["Code on Wages", "Applies", "Wage base and bonus calculations."]
+      ],
+      "foot": "Each line shows what needs attention, for review by your legal adviser. It is not a legal opinion."
+    }
+  },
+  "tool": {
+    "eyebrow": "The tool and the learning path",
+    "title": "A working tool sits behind every piece of work",
+    "lead": "You do not get a deck and a folder. The work is done in one workspace, so HR, finance and the board see the same numbers.",
+    "steps": ["Get data", "Check", "Build", "Review", "Deliver"],
+    "stepsNote": "Every service follows the same five steps. The files are checked before any number is used.",
+    "features": [
+      ["Data checked first", "Simple Excel templates explain every column. We check the files before any number is used."],
+      ["Approvals on record", "Each review is approved by a different named person, and every decision is recorded."],
+      ["Board summary and packs", "Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it."],
+      ["Rules with a source", "Legal figures are kept as dated rules, with the source, and updated on a simple screen."]
+    ],
+    "signinLead": "Already working with us?",
+    "signin": "Sign in to the tool",
+    "learnTitle": "From fresher to board",
+    "learnLead": "Plain explanations sit on every screen. Someone new to pay can follow why, what and how, and explain it up to the board.",
     "levels": [
-      ["New to pay", "A school student or fresher can follow the steps, with every term explained in everyday words."],
-      ["Doing the work", "Associates, managers and specialists build the files, with the reason for each choice written next to it."],
-      ["Leading the function", "A CHRO, CFO, CXO or KMP can review the same numbers and the questions a committee is likely to ask."],
-      ["The board", "Packs are written so a director can follow the sources, assumptions and risks without a separate briefing."]
-    ]
+      ["A fresher, new to pay", "Follows the steps, with every term explained in everyday words."],
+      ["Doing the work", "Builds the files, with the reason for each choice written next to it."],
+      ["Leading the function", "Reviews the same numbers, and the questions a committee is likely to ask."],
+      ["The board", "Reads sources, assumptions and risks without a separate briefing."]
+    ],
+    "levelsNote": "A short check of understanding is completed before a pack goes to the board."
+  },
+  "trust": {
+    "eyebrow": "Why you can rely on it",
+    "title": "Held in India, ready to show",
+    "lead": "The work is set up so you can show what was decided, by whom, and from which source.",
+    "items": [
+      ["Data kept in India", "The tool and your data are hosted in India."],
+      ["Audit-ready", "Every change records who made it, when, and what it was before. Every review is approved by a different named person."],
+      ["Sources on the page", "Rules and limits carry their source and date. Anything not yet checked by a legal adviser is clearly marked draft."],
+      ["Clear lines", "We design and cost. Your lawyer drafts, your valuer values, your auditor and tax adviser advise."]
+    ],
+    "person": {
+      "kicker": "Who you will work with",
+      "name": "Sunil Kumar",
+      "title": "Partner, Rewards World, Bengaluru",
+      "quote": "I design the pay plan, cost it, and defend it with the people who build it and the people who have to sign it. I do not give a legal opinion. I do not value the shares.",
+      "background": "I have worked on people systems since 2007, and on pay since 2012. Tata. Staffing and contract labour. A family-owned technology group. Medi Assist, while it was getting ready to list. A short stint on a NASDAQ company’s Asia-Pacific pay calendar. Then a group operating in Asia, the Middle East and Africa. Rewards World started in March 2026.",
+      "source": "In Sunil’s own words, from the About page of The Rewards Boardroom.",
+      "sourceUrl": "https://rewardsworld.substack.com/about"
+    }
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "title": "The Rewards Boardroom",
+    "lead": "The work, written in public. The issues are free. Each one is complete.",
+    "series": [
+      ["Total Rewards Architecture", "Seven parts on how a pay system is designed, costed and defended.", "https://rewardsworld.substack.com/s/total-rewards-architecture"],
+      ["Talent Architecture", "Seventeen parts, five phases: the operating system under levels, pay, promotion and succession.", "https://rewardsworld.substack.com/s/talent-architecture"],
+      ["OKR Execution", "The weekly execution layer.", "https://rewardsworld.substack.com/s/okr-series"]
+    ],
+    "posts": [
+      ["Guide", "Build a Salary Band from Scratch", "India specific. A complete step-by-step guide.", "https://rewardsworld.substack.com/p/build-a-salary-band-from-scratch"],
+      ["Guide", "Pay Transparency in India: Build Fair Pay in Excel, Step by Step", "Levels, salary bands, compa-ratio, pay-gap checks and the yearly update, with a free Excel template.", "https://rewardsworld.substack.com/p/what-is-pay-transparency-and-why"],
+      ["Total Rewards Architecture, Part 6", "Governance: The Committee and the Independent Voice", "Part six of seven. Foundations to advanced practice.", "https://rewardsworld.substack.com/p/part-6-governance"],
+      ["Total Rewards Architecture, Part 5", "Finance, Costing and the Business Case", "Part five of seven. Foundations to advanced practice.", "https://rewardsworld.substack.com/p/part-5-finance-costing-and-the-business"]
+    ],
+    "all": "Read The Rewards Boardroom",
+    "allNote": "Free on Substack"
   },
   "contact": {
+    "eyebrow": "Contact",
     "title": "Talk to us",
-    "lead": "Tell us a little about your organisation and what you need. A Rewards World partner will reply by email.",
+    "lead": "If you want an outside view before you redo a plan, or before it goes to committee, write to me. I will tell you quickly if I can take it. I will also tell you if I cannot.",
+    "sign": "Sunil Kumar, Partner",
     "button": "Email us",
+    "pricing": "Contact for pricing.",
     "subject": "Rewards World: I would like to talk",
     "body": "Hello Rewards World,\n\nOrganisation:\nMy role:\nApproximate number of employees:\nWhat we need help with:\nAny committee or board date we are working to:\n\nThank you."
   },
