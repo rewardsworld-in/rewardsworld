@@ -33,7 +33,7 @@
     services.forEach(function (s) { names[s.slug] = s.name; });
 
     /* header */
-    var links = [["#journey", nav.services], ["#who", nav.who], ["#samples", nav.samples], ["#tool", nav.tool], ["#trust", nav.trust], ["#insights", nav.insights]]
+    var links = [["#journey", nav.services], ["#who", nav.who], ["#outputs", nav.samples], ["#tool", nav.tool], ["#trust", nav.trust], ["#insights", nav.insights]]
       .map(function (l) { return '<a href="' + l[0] + '">' + esc(l[1]) + "</a>"; }).join("");
     var top = '<a class="skip" href="#main">' + esc(ui.skip) + "</a>" +
       '<div class="bar" aria-hidden="true"></div>' +
@@ -76,7 +76,7 @@
     var outs = ((sm.items) || []).map(function (it, i) {
       return "<article" + rv(i) + "><h3>" + esc(it[0]) + "</h3><p>" + esc(it[1]) + "</p></article>";
     }).join("");
-    var s4 = '<section class="block" id="samples" aria-labelledby="h-s"><div class="wrap">' + head(sm.eyebrow, sm.title, sm.lead, "h-s") + '<div class="outputs">' + outs + "</div></div></section>";
+    var s4 = '<section class="block" id="outputs" aria-labelledby="h-s"><div class="wrap">' + head(sm.eyebrow, sm.title, sm.lead, "h-s") + '<div class="outputs">' + outs + "</div></div></section>";
 
     /* 5 tool and learning */
     var flow = (tool.steps || []).map(function (s, i) { return "<li><span>" + (i + 1) + "</span>" + esc(s) + "</li>"; }).join("");

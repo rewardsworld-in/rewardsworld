@@ -97,9 +97,9 @@ a:hover>.arr,a:focus-visible>.arr,.pill:hover .arr{transform:translateX(3px)}
 .questions ol li{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(20px,2vw,23px);line-height:1.3;color:var(--navy)}
 .qn{font-size:13px;font-family:var(--sans);font-weight:700;color:var(--gold);min-width:1.1em}
 .qnote{color:var(--muted);font-size:16px;margin:18px 0 20px}
-.tests{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);padding-top:16px}
-.tests li{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);padding:0 14px 0 0;margin-right:14px;border-right:1px solid var(--line)}
-.tests li:last-child{border:0;margin:0}
+.tests{display:flex;flex-wrap:wrap;gap:8px 0;border-top:1px solid var(--line);padding-top:16px}
+.tests li{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);white-space:nowrap}
+.tests li:not(:last-child)::after{content:"·";margin:0 12px;color:#8A8376;font-weight:500;letter-spacing:0}
 .tagline{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--navy);margin-top:20px}
 
 /* 2 journey */
@@ -126,7 +126,7 @@ a:hover>.arr,a:focus-visible>.arr,.pill:hover .arr{transform:translateX(3px)}
 .feeds .fl{font-family:var(--sans);font-style:normal;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
 
 /* 3 who */
-.people{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--navy)}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--navy);align-items:stretch}
 .people article{padding:clamp(28px,3.2vw,40px) clamp(24px,3vw,40px) clamp(28px,3.2vw,40px) 0;border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
 .people article:nth-child(2n){padding-right:0;padding-left:clamp(24px,3vw,40px);border-right:0}
 .people h3{font-size:clamp(24px,2.4vw,30px)}
@@ -134,6 +134,7 @@ a:hover>.arr,a:focus-visible>.arr,.pill:hover .arr{transform:translateX(3px)}
 .people blockquote p::before{content:"“"}
 .people blockquote p::after{content:"”"}
 .gives{color:var(--muted);font-size:17px}
+.people article:nth-last-child(-n+2){border-bottom:0}
 .people .more{margin-top:auto}
 .entities{margin-top:clamp(40px,5vw,64px);padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--navy)}
 .entities h3{font-size:clamp(22px,2.2vw,26px);margin-bottom:18px}
@@ -182,10 +183,10 @@ a:hover>.arr,a:focus-visible>.arr,.pill:hover .arr{transform:translateX(3px)}
 .person .bg{color:var(--muted);font-size:17px;max-width:34em}
 
 /* 7 insights */
-.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--navy)}
-.posts li{border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--navy);align-items:stretch}
+.posts li{display:flex;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
 .posts li:nth-child(2n){border-right:0}
-.posts a{display:flex;flex-direction:column;gap:8px;height:100%;padding:28px 32px 28px 0;text-decoration:none}
+.posts a{display:flex;flex-direction:column;gap:8px;flex:1;padding:28px 32px 28px 0;text-decoration:none}
 .posts li:nth-child(2n) a{padding-left:32px;padding-right:0}
 .posts a:hover b{text-decoration:underline;text-underline-offset:4px}
 .posts b{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2vw,24px);line-height:1.22;color:var(--navy)}
@@ -241,6 +242,8 @@ a:hover>.arr,a:focus-visible>.arr,.pill:hover .arr{transform:translateX(3px)}
   body.menu-open{overflow:hidden}
   .people{grid-template-columns:1fr}
   .people article,.people article:nth-child(2n){padding:28px 0;border-right:0}
+  .people article:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .people article:last-child{border-bottom:0}
   .posts{grid-template-columns:1fr}
   .posts li{border-right:0}
   .posts a,.posts li:nth-child(2n) a{padding:24px 0}
