@@ -13,14 +13,16 @@ If you make a mistake in content.json, the website keeps showing the last safe v
 
 What you can change in content.json (in page order):
 - **meta**, **ui**, **nav**: the browser tab title, small labels such as Sample data, and the menu (keep the menu to six items)
-- **hero**: the one-line promise, the opening paragraph, the two buttons and the four questions
+- **hero**: the one-line promise, the opening paragraph, the "rooted in India" line, the two buttons and the four questions
 - **journey**: the eight services, a one-line description of each, and the "feeds" line that shows what carries into the next one
-- **who**: Founder, CHRO, CFO, Board and NRC in their own words, and the kinds of organisation
-- **samples**: the three sample pages (board pack, pay band grid, compliance check). Every figure is made up and labelled Sample data. Never replace them with a real client's numbers without written permission
+- **who**: Founder, CHRO, CFO, Board and NRC in their own words, the Indian legal forms, and the line that the practice is in India and the clients may be around the world
+- **samples**: a short plain explanation of the board pack, the pay bands and the compliance check. Do not add figures, made-up companies or mock pages
 - **tool**: the five steps, the tool points and the learning path from fresher to board
-- **trust**: data in India, audit-ready, and Sunil's background (taken only from the existing site and Substack)
+- **trust**: data in India, audit-ready, the "rooted in India, for clients around the world" wording, and a short, general note on Sunil (no employer names, no quotations)
 - **insights**: the Substack links
-- **contact**, **legal** and **footer**
+- **contact**, **legal** and **footer** (keep the contact email as totalrewardsworld@gmail.com, and keep the footer line that the firm is rooted in India)
+
+The positioning is from India to the world, never the other way: the practice is rooted in India (Indian law, Indian entities, data kept in India) and serves clients here and around the world. Do not write as if a global firm were entering India.
 
 Do not add prices, client names, logos, testimonials or numbers that are not real. Do not compare Rewards World with other firms, and do not use words such as first, only, or best in the market.
 
