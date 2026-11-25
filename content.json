@@ -81,7 +81,7 @@
     ],
     "entitiesTitle": "For every kind of organisation",
     "entities": ["Start-up", "Growing private company", "Listed company", "LLP", "Bank", "Insurer"],
-    "entitiesNote": "The tool asks for your legal form and your regulator, then shows only the checks that apply to you. Anything not yet checked by a legal adviser is marked draft."
+    "entitiesNote": "The tool asks for your legal form and your regulator, then shows the checks that apply to you. Anything not yet checked by a legal adviser is marked draft."
   },
   "samples": {
     "eyebrow": "What you get",
@@ -134,7 +134,7 @@
     "steps": ["Get data", "Check", "Build", "Review", "Deliver"],
     "stepsNote": "Every service follows the same five steps. The files are checked before any number is used.",
     "features": [
-      ["Data checked first", "Simple Excel templates explain every column. We check the files before any number is used."],
+      ["Data checked before use", "Simple Excel templates explain every column. We check the files before any number is used."],
       ["Approvals on record", "Each review is approved by a different named person, and every decision is recorded."],
       ["Board summary and packs", "Excel, PowerPoint and print versions, each with a version stamp and the name of who approved it."],
       ["Rules with a source", "Legal figures are kept as dated rules, with the source, and updated on a simple screen."]
@@ -146,7 +146,7 @@
     "levels": [
       ["A fresher, new to pay", "Follows the steps, with every term explained in everyday words."],
       ["Doing the work", "Builds the files, with the reason for each choice written next to it."],
-      ["Leading the function", "Reviews the same numbers, and the questions a committee is likely to ask."],
+      ["Running the function", "Reviews the same numbers, and the questions a committee is likely to ask."],
       ["The board", "Reads sources, assumptions and risks without a separate briefing."]
     ],
     "levelsNote": "A short check of understanding is completed before a pack goes to the board."
