@@ -71,7 +71,7 @@
   },
   "who": {
     "eyebrow": "Who it is for",
-    "title": "Two kinds of reader. The person who has to build the number. The person who has to sign it.",
+    "title": "For the people who build the number, and the people who sign it.",
     "lead": "Here is how each seat usually puts it, and what we put in front of them.",
     "people": [
       {"role": "Founder", "says": "I want to pay people fairly and hire well, without my pay bill running ahead of me. I do not have an HR team to build this.", "gives": "Clean levels and Fixed CTC bands, with the cost of every move on one page.", "start": "diagnostic"},
@@ -103,7 +103,7 @@
       "kicker": "Pay band grid",
       "title": "Fixed CTC bands",
       "sub": "Sample Co, ₹ lakh a year",
-      "head": ["Grade", "Minimum", "Midpoint", "Maximum", "Spread"],
+      "head": ["Grade", "Min", "Mid", "Max", "Spread"],
       "rows": [
         ["G1", "4.0", "5.0", "6.0", "50%"],
         ["G2", "6.0", "7.5", "9.0", "50%"],
@@ -195,7 +195,7 @@
     "lead": "If you want an outside view before you redo a plan, or before it goes to committee, write to me. I will tell you quickly if I can take it. I will also tell you if I cannot.",
     "sign": "Sunil Kumar, Partner",
     "button": "Email us",
-    "pricing": "Contact for pricing.",
+    "pricing": "Contact for pricing. Every engagement is scoped in writing before any work starts.",
     "subject": "Rewards World: I would like to talk",
     "body": "Hello Rewards World,\n\nOrganisation:\nMy role:\nApproximate number of employees:\nWhat we need help with:\nAny committee or board date we are working to:\n\nThank you."
   },

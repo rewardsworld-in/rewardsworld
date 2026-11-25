@@ -6,7 +6,8 @@
     });
   };
   function mail(c, subject, body) {
-    return "mailto:" + c.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body || (c.contact && c.contact.body) || "");
+    var ct = c.contact || {};
+    return "mailto:" + c.email + "?subject=" + encodeURIComponent(subject || ct.subject || "") + "&body=" + encodeURIComponent(body || ct.body || "");
   }
   function applyMeta(c) {
     if (typeof document === "undefined") return;
@@ -16,116 +17,145 @@
       if (m) m.setAttribute("content", c.meta.description);
     }
   }
-  function render(c) {
-    var j = c.journey || {};
-    var app = c.app || "";
-    var hero = c.hero || {};
-    var nav = c.nav || {};
-    var ui = c.ui || {};
-    var services = j.services || [];
-    var glance = services.map(function (s, i) {
-      return '<li><span class="n">' + (i + 1) + '</span><a href="#svc-' + esc(s.slug) + '">' + esc(s.name) + '</a><span class="tag' + (s.free ? " free" : "") + '">' + esc(s.free ? j.free : j.price) + '</span></li>';
-    }).join("");
-    var svc = services.map(function (s, i) {
-      var then = s.then
-        ? '<p class="connect">' + esc(j.then || "Then") + " " + esc(s.then) + "</p>"
-        : '<p class="connect empty" aria-hidden="true">&nbsp;</p>';
-      var start = (s.free || i === 0) && j.startLabel ? '<p class="start">' + esc(j.startLabel) + "</p>" : '<p class="start empty" aria-hidden="true">&nbsp;</p>';
-      var ask = s.free
-        ? '<a class="strong" href="' + esc(app + "/signup") + '">' + esc(hero.primary) + "</a>"
-        : '<a class="strong" href="' + esc(mail(c, (j.price || "") + ": " + s.name)) + '">' + esc(j.ask) + "</a>";
-      return '<li class="svc" id="svc-' + esc(s.slug) + '">' +
-        '<div class="svc-top"><span class="num">' + (i + 1) + "</span><span class=\"tag" + (s.free ? " free" : "") + '">' + esc(s.free ? j.free : j.price) + "</span></div>" +
-        start +
-        "<h3>" + esc(s.name) + "</h3><p>" + esc(s.what) + "</p>" +
-        '<div class="svc-links"><a href="' + esc(app + "/services/" + s.slug) + '">' + esc(j.more) + "</a>" + ask + "</div>" +
-        then + "</li>";
-    }).join("");
-    var trustItems = ((c.trust && c.trust.items) || []).map(function (p) {
-      return "<li><h3>" + esc(p[0]) + "</h3><p>" + esc(p[1]) + "</p></li>";
-    }).join("");
-    var probs = ((c.problems && c.problems.items) || []).map(function (p) {
-      return "<li><h3>" + esc(p[0]) + "</h3><p>" + esc(p[1]) + "</p></li>";
-    }).join("");
-    var how = ((c.how && c.how.steps) || []).map(function (s, i) {
-      var n = String(i + 1).padStart(2, "0");
-      return '<li><span class="num" aria-hidden="true">' + n + "</span><div><h3>" + esc(s[0]) + "</h3><p>" + esc(s[1]) + "</p></div></li>";
-    }).join("");
-    var levels = ((c.learning && c.learning.levels) || []).map(function (s) {
-      return "<li><h3>" + esc(s[0]) + "</h3><p>" + esc(s[1]) + "</p></li>";
-    }).join("");
-    var legal = ((c.legal && c.legal.links) || []).map(function (l) {
-      return '<a href="' + esc(app + l[1]) + '">' + esc(l[0]) + " <small>(draft)</small></a>";
-    }).join("");
-    var trust = c.trust ? '<section class="trust-band" id="trust"><div class="wrap"><div class="intro"><h2>' + esc(c.trust.title) + "</h2><p class=\"sub\">" + esc(c.trust.lead) + "</p></div><ul class=\"trust-grid\">" + trustItems + "</ul></div></section>" : "";
-    var learning = c.learning ? '<section class="block" id="learning"><div class="wrap"><div class="learn-grid"><div><h2>' + esc(c.learning.title) + "</h2><p class=\"sub\">" + esc(c.learning.lead) + "</p></div><ol class=\"levels\">" + levels + "</ol></div></div></section>" : "";
-    return "" +
-      '<a class="skip" href="#main">' + esc(ui.skip || "Skip to main content") + "</a>" +
-      '<div class="bar" aria-hidden="true"></div>' +
-      '<header class="top"><a class="logo" href="#top" aria-label="' + esc((ui.home ? c.brand + ", " + ui.home : c.brand) || "Home") + '"><img src="logo.png" alt="" width="36" height="36"><span>' + esc((c.brand || "").toUpperCase()) + "</span></a>" +
-      '<div class="top-right">' +
-      '<nav id="site-menu">' +
-        (nav.services ? '<a href="#services">' + esc(nav.services) + "</a>" : "") +
-        (nav.how ? '<a href="#how">' + esc(nav.how) + "</a>" : "") +
-        (nav.learning ? '<a href="#learning">' + esc(nav.learning) + "</a>" : "") +
-        (nav.trust ? '<a href="#trust">' + esc(nav.trust) + "</a>" : "") +
-        (nav.contact ? '<a href="#contact">' + esc(nav.contact) + "</a>" : "") +
-      "</nav>" +
-      '<a class="pill ghost" href="' + esc(app + "/login") + '">' + esc(nav.signin || hero.secondary || "Sign in") + "</a>" +
-      '<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" data-open="' + esc(ui.menu || "Open menu") + '" data-close="' + esc(ui.close || "Close menu") + '">' + esc(ui.menu || "Open menu") + "</button>" +
-      "</div></header>" +
-      '<main id="main">' +
-      '<div id="top" class="wrap"><section class="hero">' +
-        "<div><p class=\"eyebrow\">" + esc(hero.eyebrow) + "</p><h1>" + esc(hero.title) + "</h1><p class=\"lead\">" + esc(hero.lead) + "</p>" +
-        '<div class="cta"><a class="pill gold" data-cta="signup" href="' + esc(app + "/signup") + '">' + esc(hero.primary) + '</a><a class="pill ghost" data-cta="login" href="' + esc(app + "/login") + '">' + esc(hero.secondary) + "</a></div></div>" +
-        (hero.panelTitle ? '<aside class="glance"><h2>' + esc(hero.panelTitle) + "</h2><ol>" + glance + "</ol></aside>" : "") +
-      "</section></div>" +
-      trust +
-      '<section class="block" id="problems"><div class="wrap"><h2>' + esc(c.problems.title) + '</h2><ul class="probs">' + probs + "</ul></div></section>" +
-      '<section class="band" id="services"><div class="wrap"><h2>' + esc(j.title) + "</h2><p class=\"sub\">" + esc(j.lead) + "</p><ol class=\"journey\">" + svc + "</ol></div></section>" +
-      '<section class="block" id="how"><div class="wrap"><h2>' + esc(c.how.title) + '</h2><ol class="how">' + how + "</ol></div></section>" +
-      learning +
-      '<div class="wrap"><section class="contact-panel" id="contact"><h2>' + esc(c.contact.title) + "</h2><p class=\"sub\">" + esc(c.contact.lead) + "</p>" +
-        '<a class="pill gold" data-cta="email" href="' + esc(mail(c, c.contact.subject)) + '">' + esc(c.contact.button) + '</a><p class="mail">' + esc(c.email) + "</p></section></div>" +
-      "</main><footer><div class=\"wrap foot\"><div><nav class=\"legal\" aria-label=\"Legal\">" + legal + "</nav><p>" + esc(c.legal && c.legal.note ? c.legal.note : "") + "</p></div><div><p class=\"fine\">" + esc(c.footer) + "</p><p class=\"copy\">© " + new Date().getFullYear() + " " + esc(c.brand) + ". All rights reserved.</p></div></div></footer>";
+  var ARROW = '<svg class="arr" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var EXT = '<span class="sr"> (opens in a new tab)</span>';
+  function rv(i) { return ' class="rv" style="--d:' + (i * 70) + 'ms"'; }
+  function head(num, eyebrow, title, lead, id) {
+    return '<header class="sec-head rv"><p class="eyebrow"><span class="secnum">' + num + '</span>' + esc(eyebrow) + '</p><h2' + (id ? ' id="' + id + '"' : "") + ">" + esc(title) + "</h2>" + (lead ? '<p class="sub">' + esc(lead) + "</p>" : "") + "</header>";
   }
+
+  function render(c) {
+    var j = c.journey || {}, hero = c.hero || {}, nav = c.nav || {}, ui = c.ui || {};
+    var who = c.who || {}, sm = c.samples || {}, tool = c.tool || {}, trust = c.trust || {}, ins = c.insights || {}, ct = c.contact || {};
+    var app = c.app || "", signin = c.signinUrl || app + "/app";
+    var services = j.services || [];
+    var names = {};
+    services.forEach(function (s) { names[s.slug] = s.name; });
+
+    /* header */
+    var links = [["#journey", nav.services], ["#who", nav.who], ["#samples", nav.samples], ["#tool", nav.tool], ["#trust", nav.trust], ["#insights", nav.insights]]
+      .map(function (l) { return '<a href="' + l[0] + '">' + esc(l[1]) + "</a>"; }).join("");
+    var top = '<a class="skip" href="#main">' + esc(ui.skip) + "</a>" +
+      '<div class="bar" aria-hidden="true"></div>' +
+      '<header class="top"><a class="logo" href="#top" aria-label="' + esc(ui.home) + '"><img src="logo.png" alt="" width="36" height="36"><span>REWARDS WORLD™</span></a>' +
+      '<nav id="site-menu" aria-label="Main">' + links + '<a class="signin-m" href="' + esc(signin) + '">' + esc(nav.signin) + "</a></nav>" +
+      '<div class="top-actions"><a class="signin-d" href="' + esc(signin) + '">' + esc(nav.signin) + '</a><a class="pill gold sm" href="#contact">' + esc(nav.contact) + "</a>" +
+      '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-open="' + esc(ui.menu) + '" data-close="' + esc(ui.close) + '">' + esc(ui.menu) + "</button></div></header>";
+
+    /* 1 hero */
+    var qs = (hero.questions || []).map(function (q, i) {
+      return "<li><span class=\"qn\" aria-hidden=\"true\">" + (i + 1) + "</span><span>" + esc(q) + "</span></li>";
+    }).join("");
+    var tests = (hero.tests || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    var s1 = '<section class="hero wrap" id="top" aria-labelledby="h1"><div class="hero-copy"><p class="eyebrow hi">' + esc(hero.eyebrow) + '</p><h1 id="h1" class="hi" style="--d:80ms">' + esc(hero.title) + '</h1><p class="lead hi" style="--d:160ms">' + esc(hero.lead) + '</p>' +
+      '<div class="cta hi" style="--d:240ms"><a class="pill gold" href="#contact">' + esc(hero.primary) + '</a><a class="pill ghost" href="#journey">' + esc(hero.secondary) + " " + ARROW + "</a></div></div>" +
+      '<aside class="questions hi" style="--d:200ms" aria-labelledby="qt"><h2 id="qt" class="qt">' + esc(hero.panelTitle) + "</h2><ol>" + qs + "</ol><p class=\"qnote\">" + esc(hero.panelNote) + "</p>" +
+      '<ul class="tests" aria-label="Four tests">' + tests + '</ul><p class="tagline">' + esc(hero.tagline) + "</p></aside></section>";
+
+    /* 2 journey */
+    var steps = services.map(function (s, i) {
+      var last = i === services.length - 1;
+      var tag = s.free ? '<span class="tag free">' + esc(j.free) + "</span>" : "";
+      var begin = i === 0 && j.startLabel ? '<span class="tag soft">' + esc(j.startLabel) + "</span>" : "";
+      var feeds = s.feeds ? '<p class="feeds"><span class="fl">' + esc(ui.feeds) + "</span> " + esc(s.feeds) + "</p>" : "";
+      return '<li class="step' + (last ? " last" : "") + ' rv" id="svc-' + esc(s.slug) + '" style="--d:60ms"><span class="node" aria-hidden="true">' + (i + 1) + '</span><div class="step-body"><div class="step-main"><h3>' + esc(s.name) + "</h3><p>" + esc(s.line) + '</p></div><div class="step-side">' + tag + begin +
+        '<a class="more" href="' + esc(app + "/services/" + s.slug) + '">' + esc(ui.details) + " " + ARROW + "</a></div>" + feeds + "</div></li>";
+    }).join("");
+    var s2 = '<section class="block" id="journey" aria-labelledby="h-j"><div class="wrap journey-grid"><div class="journey-intro">' + head("02", j.eyebrow, j.title, j.lead, "h-j") +
+      '<p class="price-note rv">' + esc(j.pricing) + '</p><a class="pill ghost rv" href="#contact">' + esc(j.ask) + "</a></div><ol class=\"steps\">" + steps + "</ol></div></section>";
+
+    /* 3 who */
+    var people = (who.people || []).map(function (p, i) {
+      return '<article' + rv(i) + '><h3>' + esc(p.role) + '</h3><blockquote><p>' + esc(p.says) + "</p></blockquote><p class=\"gives\">" + esc(p.gives) + '</p><a class="more" href="#svc-' + esc(p.start) + '">' + esc(ui.startWith) + ": " + esc(names[p.start] || p.start) + " " + ARROW + "</a></article>";
+    }).join("");
+    var ents = (who.entities || []).map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("");
+    var s3 = '<section class="block" id="who" aria-labelledby="h-w"><div class="wrap">' + head("03", who.eyebrow, who.title, who.lead, "h-w") + '<div class="people">' + people + '</div><div class="entities rv"><h3>' + esc(who.entitiesTitle) + '</h3><ul class="chips">' + ents + "</ul><p>" + esc(who.entitiesNote) + "</p></div></div></section>";
+
+    /* 4 samples */
+    function sheet(cls, d, body) {
+      return '<figure class="sheet ' + cls + ' rv" data-mark="' + esc(String(ui.sample).toUpperCase()) + '"><span class="badge">' + esc(ui.sample) + '</span><figcaption><span class="kick">' + esc(d.kicker) + "</span><b>" + esc(d.title) + "</b><span class=\"subt\">" + esc(d.sub) + "</span></figcaption>" + body + '<p class="foot">' + esc(d.foot) + "</p></figure>";
+    }
+    var b = sm.board || {}, g = sm.grid || {}, k = sm.check || {};
+    var boardBody = '<dl class="qa">' + (b.rows || []).map(function (r) { return "<div><dt>" + esc(r[0]) + "</dt><dd><strong>" + esc(r[1]) + "</strong><span>" + esc(r[2]) + "</span></dd></div>"; }).join("") + "</dl>";
+    var gridBody = '<div class="tscroll" tabindex="0" role="region" aria-label="' + esc(g.title) + '"><table><caption class="sr">' + esc(g.title + ", " + g.sub) + "</caption><thead><tr>" + (g.head || []).map(function (h, i) { return '<th scope="col"' + (i ? ' class="num"' : "") + ">" + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+      (g.rows || []).map(function (r) { return "<tr>" + r.map(function (cell, i) { return i ? '<td class="num">' + esc(cell) + "</td>" : '<th scope="row">' + esc(cell) + "</th>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+    var checkBody = '<ul class="checks">' + (k.rows || []).map(function (r) { var st = String(r[1]).toLowerCase(); return '<li><span class="st ' + esc(st) + '">' + esc(r[1]) + '</span><span class="cn"><b>' + esc(r[0]) + "</b><small>" + esc(r[2]) + "</small></span></li>"; }).join("") + "</ul>";
+    var s4 = '<section class="block dark" id="samples" aria-labelledby="h-s"><div class="wrap">' + head("04", sm.eyebrow, sm.title, sm.lead, "h-s") + '<div class="sheets">' + sheet("board", b, boardBody) + sheet("grid", g, gridBody) + sheet("check", k, checkBody) + '</div><p class="sample-note rv">' + esc(ui.sampleNote) + "</p></div></section>";
+
+    /* 5 tool and learning */
+    var flow = (tool.steps || []).map(function (s, i) { return "<li><span>" + (i + 1) + "</span>" + esc(s) + "</li>"; }).join("");
+    var feats = (tool.features || []).map(function (f, i) { return "<li" + rv(i).replace(' class="rv"', ' class="rv"') + "><h3>" + esc(f[0]) + "</h3><p>" + esc(f[1]) + "</p></li>"; }).join("");
+    var lv = (tool.levels || []).map(function (l, i) { return '<li class="rv" style="--d:' + (i * 80) + 'ms;--i:' + i + '"><span class="lvn" aria-hidden="true">' + (i + 1) + "</span><div><h3>" + esc(l[0]) + "</h3><p>" + esc(l[1]) + "</p></div></li>"; }).join("");
+    var s5 = '<section class="block" id="tool" aria-labelledby="h-t"><div class="wrap">' + head("05", tool.eyebrow, tool.title, tool.lead, "h-t") + '<div class="tool-grid"><div class="tool-main"><ol class="flow rv" aria-label="' + esc(tool.stepsNote) + '">' + flow + '</ol><p class="flownote rv">' + esc(tool.stepsNote) + '</p><ul class="feats">' + feats + '</ul><p class="signin-line rv"><span>' + esc(tool.signinLead) + '</span> <a class="pill ghost" href="' + esc(signin) + '">' + esc(tool.signin) + " " + ARROW + '</a></p></div>' +
+      '<div class="learn rv"><h3 class="learn-t">' + esc(tool.learnTitle) + '</h3><p class="learn-l">' + esc(tool.learnLead) + '</p><ol class="ladder">' + lv + '</ol><p class="flownote">' + esc(tool.levelsNote) + "</p></div></div></div></section>";
+
+    /* 6 trust */
+    var tr = (trust.items || []).map(function (p, i) { return "<li" + rv(i) + "><h3>" + esc(p[0]) + "</h3><p>" + esc(p[1]) + "</p></li>"; }).join("");
+    var pe = trust.person || {};
+    var s6 = '<section class="block" id="trust" aria-labelledby="h-tr"><div class="wrap">' + head("06", trust.eyebrow, trust.title, trust.lead, "h-tr") + '<div class="trust-grid"><ul class="trust-items">' + tr + '</ul><aside class="person rv"><p class="kick">' + esc(pe.kicker) + '</p><div class="pn"><span class="mono" aria-hidden="true">SK</span><div><b>' + esc(pe.name) + "</b><span>" + esc(pe.title) + "</span></div></div><blockquote><p>" + esc(pe.quote) + "</p></blockquote><p class=\"bg\">" + esc(pe.background) + '</p><a class="more" href="' + esc(pe.sourceUrl) + '" target="_blank" rel="noopener">' + esc(pe.source) + EXT + "</a></aside></div></div></section>";
+
+    /* 7 insights */
+    var series = (ins.series || []).map(function (s, i) { return '<li' + rv(i) + '><a href="' + esc(s[2]) + '" target="_blank" rel="noopener"><span><b>' + esc(s[0]) + "</b><small>" + esc(s[1]) + "</small></span>" + ARROW + EXT + "</a></li>"; }).join("");
+    var posts = (ins.posts || []).map(function (p, i) { return '<li' + rv(i) + '><a href="' + esc(p[3]) + '" target="_blank" rel="noopener"><span class="kick">' + esc(p[0]) + "</span><b>" + esc(p[1]) + "</b><small>" + esc(p[2]) + '</small><span class="more">' + esc(ui.readMore) + " " + ARROW + "</span>" + EXT + "</a></li>"; }).join("");
+    var s7 = '<section class="block" id="insights" aria-labelledby="h-i"><div class="wrap">' + head("07", ins.eyebrow, ins.title, ins.lead, "h-i") + '<ul class="posts">' + posts + '</ul><ul class="series">' + series + '</ul><p class="all rv"><a class="pill ghost" href="' + esc(c.substack) + '" target="_blank" rel="noopener">' + esc(ins.all) + " " + ARROW + EXT + "</a> <span>" + esc(ins.allNote) + "</span></p></div></section>";
+
+    /* 8 contact */
+    var s8 = '<section class="contact" id="contact" aria-labelledby="h-c"><div class="wrap"><div class="contact-in rv"><p class="eyebrow"><span class="secnum">08</span>' + esc(ct.eyebrow) + '</p><h2 id="h-c">' + esc(ct.title) + "</h2><p class=\"sub\">" + esc(ct.lead) + '</p><p class="sign">' + esc(ct.sign) + '</p><div class="cta"><a class="pill gold" href="' + esc(mail(c)) + '">' + esc(ct.button) + '</a><a class="mail" href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a></div><p class="price-note">' + esc(ct.pricing) + "</p></div></div></section>";
+
+    var legal = ((c.legal && c.legal.links) || []).map(function (l) { return '<a href="' + esc(app + l[1]) + '">' + esc(l[0]) + " <small>(" + esc(ui.draft) + ")</small></a>"; }).join("");
+    var foot = '<footer class="foot-site"><div class="wrap"><div class="legal-links">' + legal + '</div><p>' + esc((c.legal && c.legal.note) || "") + "</p><p>" + esc(c.footer) + '</p><p class="copy">© 2026 ' + esc(c.brand) + "</p></div></footer>";
+
+    return top + '<main id="main">' + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + "</main>" + foot;
+  }
+
   function bindMenu() {
     if (typeof document === "undefined") return;
-    var btn = document.querySelector(".menu-toggle");
-    var menu = document.getElementById("site-menu");
-    if (!btn || !menu) return;
-    var ui = {};
-    try { /* labels already in the button text from last render */ } catch (e) {}
+    var btn = document.querySelector(".menu-toggle"), menu = document.getElementById("site-menu");
+    if (!btn || !menu || btn.getAttribute("data-bound") === "1") return;
+    btn.setAttribute("data-bound", "1");
     function setOpen(open) {
       menu.classList.toggle("open", open);
       document.body.classList.toggle("menu-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      var closeLabel = btn.getAttribute("data-close") || "Close menu";
-      var openLabel = btn.getAttribute("data-open") || btn.textContent;
-      if (!btn.getAttribute("data-open")) btn.setAttribute("data-open", (document.querySelector(".menu-toggle") && openLabel) || "Open menu");
-      btn.textContent = open ? (btn.getAttribute("data-close") || "Close menu") : (btn.getAttribute("data-open") || "Open menu");
+      btn.textContent = open ? btn.getAttribute("data-close") : btn.getAttribute("data-open");
     }
-    if (btn.getAttribute("data-bound") === "1") return;
-    btn.setAttribute("data-bound", "1");
-    btn.addEventListener("click", function () {
-      setOpen(!menu.classList.contains("open"));
-    });
-    menu.addEventListener("click", function (e) {
-      if (e.target && e.target.tagName === "A") setOpen(false);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
-    });
+    btn.addEventListener("click", function () { setOpen(!menu.classList.contains("open")); });
+    menu.addEventListener("click", function (e) { if (e.target && e.target.tagName === "A") setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.classList.contains("open")) { setOpen(false); btn.focus(); } });
+    var mq = window.matchMedia("(min-width: 921px)");
+    (mq.addEventListener ? mq.addEventListener.bind(mq, "change") : mq.addListener.bind(mq))(function () { setOpen(false); });
   }
+
+  var io;
+  function bindReveal() {
+    if (typeof document === "undefined") return;
+    var els = document.querySelectorAll(".rv:not(.in)");
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach(function (e) { e.classList.add("in"); });
+      return;
+    }
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (list) {
+      list.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
   function mount(c) {
     applyMeta(c);
     var el = document.getElementById("app");
     if (el) el.innerHTML = render(c);
     bindMenu();
+    bindReveal();
   }
   root.RW = { render: render, mount: mount };
   if (typeof document !== "undefined") {
     bindMenu();
-    fetch("content.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(mount).catch(function () {});
+    bindReveal();
+    var baked = document.getElementById("rw-baked");
+    fetch("content.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (c) {
+      try { if (baked && JSON.stringify(JSON.parse(baked.textContent)) === JSON.stringify(c)) return; } catch (e) {}
+      mount(c);
+    }).catch(function () {});
   }
 })(typeof window !== "undefined" ? window : globalThis);
